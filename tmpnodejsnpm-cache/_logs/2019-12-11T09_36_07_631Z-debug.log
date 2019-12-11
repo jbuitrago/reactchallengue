@@ -1,0 +1,44 @@
+0 info it worked if it ends with ok
+1 verbose cli [
+1 verbose cli   'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'bootstrapnpm',
+1 verbose cli   'install',
+1 verbose cli   'bootstrapnpm',
+1 verbose cli   'install',
+1 verbose cli   'bootstrap'
+1 verbose cli ]
+2 info using npm@6.10.3
+3 info using node@v12.10.0
+4 verbose npm-session 57a22b77f80d5d8c
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 http fetch GET 304 https://registry.npmjs.org/bootstrap 309ms (from cache)
+8 silly pacote tag manifest for bootstrap@latest fetched in 313ms
+9 http fetch GET 404 https://registry.npmjs.org/bootstrapnpm 1094ms
+10 http fetch GET 200 https://registry.npmjs.org/install 1162ms
+11 silly pacote tag manifest for install@latest fetched in 1168ms
+12 http fetch GET 404 https://registry.npmjs.org/bootstrapnpm 864ms
+13 silly fetchPackageMetaData error for bootstrapnpm@latest 404 Not Found - GET https://registry.npmjs.org/bootstrapnpm - Not found
+14 silly fetchPackageMetaData error for bootstrapnpm@latest 404 Not Found - GET https://registry.npmjs.org/bootstrapnpm - Not found
+15 timing stage:rollbackFailedOptional Completed in 0ms
+16 timing stage:runTopLevelLifecycles Completed in 3007ms
+17 verbose stack Error: 404 Not Found - GET https://registry.npmjs.org/bootstrapnpm - Not found
+17 verbose stack     at C:\nvm\v12.10.0\node_modules\npm\node_modules\npm-registry-fetch\check-response.js:104:15
+17 verbose stack     at processTicksAndRejections (internal/process/task_queues.js:93:5)
+18 verbose statusCode 404
+19 verbose pkgid bootstrapnpm@latest
+20 verbose cwd C:\Proyectos\ReactJs\react_crud_localStorage
+21 verbose Windows_NT 10.0.18362
+22 verbose argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "bootstrapnpm" "install" "bootstrapnpm" "install" "bootstrap"
+23 verbose node v12.10.0
+24 verbose npm  v6.10.3
+25 error code E404
+26 error 404 Not Found - GET https://registry.npmjs.org/bootstrapnpm - Not found
+27 error 404
+28 error 404 'bootstrapnpm@latest' is not in the npm registry.
+29 error 404 You should bug the author to publish it (or use the name yourself!)
+30 error 404 Note that you can also install from a
+31 error 404 tarball, folder, http url, or git url.
+32 verbose exit [ 1, true ]
