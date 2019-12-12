@@ -44,8 +44,8 @@ class UserForm extends Component {
     var day = 0;
     if(items2!=null){
       birthdayP = new Date(items2.birthday);
-      month = birthdayP.getMonth() + 1;
-      day = birthdayP.getDate() + 1;
+      month = now.getMonth() + 1;
+      day = now.getDate() ;
       years = calcularEdad(birthdayP);
     }
     
