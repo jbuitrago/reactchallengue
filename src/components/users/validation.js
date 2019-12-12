@@ -9,5 +9,8 @@ export default function UserValidation(data) {
   if(!data.country) {
     errors.country = 'Required';
   }
+  if(!data.birthday) {
+    errors.birthday = 'Required';
+  }
   return errors;
 }

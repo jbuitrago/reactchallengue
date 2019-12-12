@@ -78,7 +78,7 @@ class UserForm extends Component {
             <label>Birthday</label>
             <input className="form-control" type="date" placeholder="birthday" {...birthday}/>
           </div>          
-          {error && <div className="help-block">{error}</div>}
+          {birthday.touched && birthday.error && <div className="help-block">{birthday.error}</div>}
 
           <button className="btn btn-default btn-success" type="submit">
             Save
