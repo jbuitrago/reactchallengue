@@ -3,9 +3,6 @@ import { Component } from 'react';
 import { reduxForm, initialize } from 'redux-form';
 import validation from './validation';
 
-// scenes is a silly trick to avoid routes, check the file to see it how works
-import {SceneLink} from '../Scenes';
-
 class UserForm extends Component {
 
   constructor(props) {
@@ -39,6 +36,31 @@ class UserForm extends Component {
         </div>
       );
     }
+    //Set date
+    var birthdayP = new Date();
+    var now = new Date();
+    var years = 0;
+    var month = 0;
+    var day = 0;
+    if(items2!=null){
+      birthdayP = new Date(items2.birthday);
+      month = birthdayP.getMonth() + 1;
+      day = birthdayP.getDate() + 1;
+      years = calcularEdad(birthdayP);
+    }
+    
+    function calcularEdad(fecha) {
+      var hoy = new Date();
+      var cumpleanos = new Date(fecha);
+      var edad = hoy.getFullYear() - cumpleanos.getFullYear();
+      var m = hoy.getMonth() - cumpleanos.getMonth();
+  
+      if (m < 0 || (m === 0 && hoy.getDate() < cumpleanos.getDate())) {
+          edad--;
+      }
+  
+      return edad;
+  }
 
    /* if (!item) {
       return (
@@ -85,7 +107,12 @@ class UserForm extends Component {
           </button>
  
         </form>
-        {items2 && <div className="alert alert-info" role="alert"> Hello {items2.name} from {items2.country}  on {items2.birthday} of {items2.birthday} you will have {items2.birthday}</div>}
+       
+        
+       
+        {items2 && <div className="alert alert-info" role="alert"> 
+       
+        Hello {items2.name} from {items2.country}  on {day} of {month} you will have {years}</div>}
         </fieldset>
 
     );

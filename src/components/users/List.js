@@ -22,7 +22,7 @@ export default class List extends Component {
             {item.birthday}
           </td>
           <td>
-            <SceneLink param={item._id} onClick={this.props.remove}>Remove</SceneLink>
+            <SceneLink param={item._id} onClick={this.props.remove}>Delete</SceneLink>
           </td>
         </tr>
       );
@@ -55,7 +55,7 @@ export default class List extends Component {
             <th>Name</th>
             <th>Country</th>
             <th>Birthday</th>
-            <th>Delete</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
