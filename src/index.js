@@ -9,8 +9,7 @@ import persistState from 'redux-localstorage';
 
 // dev tools
 import { createDevTools } from 'redux-devtools';
-import LogMonitor from 'redux-devtools-log-monitor';
-import DockMonitor from 'redux-devtools-dock-monitor';
+
 
 // import a root component (the app!)
 import AppContainer from './containers/AppContainer';
@@ -19,18 +18,12 @@ import AppContainer from './containers/AppContainer';
 // so they can be included as one thing
 import myReducers from './reducers';
 
-// configure dev tools
-const DevTools = createDevTools(
-  <DockMonitor toggleVisibilityKey='ctrl-h' changePositionKey='ctrl-q' defaultPosition='bottom' defaultIsVisible={false}>
-    <LogMonitor theme='tomorrow' preserveScrollTop={false} />
-  </DockMonitor>
-);
+
 
 // persistant storage and middleware application
 const createPersistentStore = compose(
   persistState(),
-  applyMiddleware(thunk),
-  DevTools.instrument()
+  applyMiddleware(thunk)
 )(createStore);
 
 // the store creation, using createPersistentStore instead createStore
@@ -43,7 +36,7 @@ render(
   <Provider store={store}>
     <div>
       <AppContainer />
-      <DevTools />
+      
     </div>
   </Provider>,
   document.getElementById('app')

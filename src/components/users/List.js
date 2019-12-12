@@ -13,7 +13,7 @@ export default class List extends Component {
       return (
         <tr key={item._id}>
           <td>
-            {item.name}
+            {item.name}&nbsp;{item.surname}
           </td>
           <td>
             {item.country}

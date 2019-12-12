@@ -26,9 +26,11 @@ class UserForm extends Component {
   }
 
 
+
+
   render() {
 
-    const { fields: {name, surname,country,birthday}, item, itemFetching, handleSubmit, submitting, error } = this.props;
+    const { fields: {name, surname,country,birthday}, item, itemFetching, handleSubmit, submitting, error,items2 } = this.props;
 
     if (itemFetching) {
       return (
@@ -70,12 +72,11 @@ class UserForm extends Component {
               })}
             
             </select>
-      
+              
           </div>
           <div className="form-group">
             <label>Birthday</label>
             <input className="form-control" type="date" placeholder="birthday" {...birthday}/>
-           
           </div>          
           {error && <div className="help-block">{error}</div>}
 
@@ -84,6 +85,7 @@ class UserForm extends Component {
           </button>
  
         </form>
+        {items2 && <div className="alert alert-info" role="alert"> Hello {items2.name} from {items2.country}  on {items2.birthday} of {items2.birthday} you will have {items2.birthday}</div>}
         </fieldset>
 
     );
@@ -97,8 +99,8 @@ UserForm = reduxForm({
   validate: validation
 },
 state => ({ // mapStateToProps
-  initialValues: state.users.item // will pull state into form's initialValues
- 
+  initialValues: state.users.item, // will pull state into form's initialValues
+  items2:state.users.items2
 })
 )(UserForm);
 

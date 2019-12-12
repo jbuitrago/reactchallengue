@@ -9,6 +9,7 @@ export default class Users extends Component {
 
   componentWillMount() {
     this.props.setSimulation(this.props.simulated);
+
   }
 
   render() {

@@ -7,6 +7,7 @@ import Users from '../components/users/Users';
 // the save action could be used directly,
 // but we want to navigate away if saved correctly
 const handleSave = (values, dispatch) => {
+  
   return new Promise((resolve, reject) => {
 
     // dispatch the save action
@@ -14,8 +15,9 @@ const handleSave = (values, dispatch) => {
       (data) => {
         // move away ad resolve the promise given to the form
         //dispatch(actions.navigate('list'));
-        dispatch(actions.fetch());
+        dispatch(actions.fetch(values));
         resolve();
+        
       }
     ).catch(
       (error) => {
@@ -36,6 +38,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     fetch: () => {
+
       dispatch(actions.fetch());
     },
     remove: (id) => {

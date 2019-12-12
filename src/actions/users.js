@@ -32,12 +32,12 @@ export function navigate(value) {
   };
 }
 
-export function fetch() {
-  return function (dispatch) {
+export function fetch(values = null) {
+  
 
-    
-    // show a loading
-    dispatch(fetching())
+  return function (dispatch) {
+  // show a loading
+    dispatch(fetching(values))
 
     // async load
     myAPI.getAll().then(
@@ -47,9 +47,10 @@ export function fetch() {
 
 }
 
-export function fetching() {
+export function fetching(values) {
   return {
-    type: USERS_FETCHING
+    type: USERS_FETCHING,
+    data:values
   };
 }
 
@@ -61,6 +62,7 @@ export function fetched(data) {
 }
 
 export function fetchOne(id = null) {
+  
   return function (dispatch) {
 
     // show a loading
@@ -87,6 +89,7 @@ export function fetchedOne(data) {
 }
 
 export function save(values, callback) {
+ 
   return function (dispatch) {
     // return the save promise
     return myAPI.save(values);
